@@ -191,7 +191,6 @@ export class HaxTheClub extends I18NMixin(LitElement) {
         globalThis.document.body.classList.toggle('gone');
         this.screen = null;
         this.screen = 0;
-        this.querySelector('.joker-voice').remove();
       }, 3000);
     }, 6000);
   }
