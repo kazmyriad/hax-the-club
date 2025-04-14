@@ -135,6 +135,21 @@ export class HaxTheClub extends I18NMixin(LitElement) {
         margin: 0 8px 0 0;
         padding: 0;
       }
+
+      .joker-voice {
+        font-size: 24px;
+        line-height: auto;
+        margin: 0 8px 0 0;
+        cursor: pointer;
+        color: white;
+        background-color: #55555544;
+        border-radius: 50%;
+        padding: 4px;
+        transition: all 0.3s ease-in-out;
+      }
+      .joker-voice:hover {
+        transform: rotate(180deg);
+      }
     `];
   }
   skipIntro() {
@@ -147,6 +162,7 @@ export class HaxTheClub extends I18NMixin(LitElement) {
     return html`
     <div class="buttons">
       ${this.skipped ? html`
+        <span class="joker-voice" @click="${this.jokerClick}" data-voice="joker-website-gone">🃏</span>
         <simple-icon-button-lite
         icon="icons:arrow-forward"
         @click="${this.arrowClick}"
@@ -165,6 +181,37 @@ export class HaxTheClub extends I18NMixin(LitElement) {
     <div class="wrapper">
       <slot></slot>
     </div>`;
+  }
+  jokerClick(e) {
+    this.playVoice(e);
+    globalThis.document.body.classList.toggle('joker');
+    setTimeout(() => {
+      globalThis.document.body.classList.toggle('gone');
+      setTimeout(() => {
+        globalThis.document.body.classList.toggle('gone');
+        this.screen = null;
+        this.screen = 0;
+        this.querySelector('.joker-voice').remove();
+      }, 3000);
+    }, 6000);
+  }
+  playVoice(e) {
+    let sound = e.target.getAttribute('data-voice');
+    return new Promise((resolve) => {
+      let playSound = ["joker-website-gone"].includes(sound) ? sound : "joker-website-gone";
+      this.audio = new Audio(
+        new URL(`./assets/voices/${playSound}.mp3`, import.meta.url).href,
+      );
+      this.audio.volume = 0.8;
+      this.audio.onended = (event) => {
+        resolve();
+      };
+      this.audio.play();
+      // resolve after 500s if sound failed to load
+      setTimeout(() => {
+        resolve();
+      }, 500);
+    });
   }
   playSound(e) {
     let sound = "coin2";
