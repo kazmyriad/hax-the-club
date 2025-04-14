@@ -54,6 +54,7 @@
       font-family: 'Roboto',Helvetica,Arial,Lucida,sans-serif;
       --primary-color-1: #000000;
       background-color: var(--primary-color-1);
+      overflow: hidden;
     }
     hax-the-club:not(:defined) {
       height: 100vh;
@@ -106,21 +107,43 @@
       margin: 0px auto;
     }
 
+    example-htc-screen[sid="1"]{
+      position: absolute;
+      left: 100%;
+      background-color: red;
+    }
+    example-htc-screen[sid="2"]{
+      background-color: orange;
+    }
+
   </style>
   <title>HAX: The Club - Penn State's HAX Club</title>
 </head>
 
 <body>   
   <hax-the-club>
-    <htc-main-screen>
+    <htc-main-screen title="Home" sid="0">
       <div class="load-wrapper" slot="load-wrapper">
         <h1>
           <span class="text">HAX The Club</span>
         </h1>
       </div>
     </htc-main-screen>
+    <example-htc-screen title="About us" sid="1">
+      <h1>
+        <span class="text">About us</span>
+      </h1>
+      <p>This is some awesome content about us. We are a club of people that do things</p>
+    </example-htc-screen>
+    <example-htc-screen title="Something" sid="2">
+      <h1>
+        <span class="text">Something Else us</span>
+      </h1>
+      <p>This is some awesome content about us. We are a club of people that do things</p>
+    </example-htc-screen>
   </hax-the-club>
   <script type="module" src="./hax-the-club.js"></script>
   <script type="module" src="./lib/htc-main-screen.js"></script>
+  <script type="module" src="./lib/example-htc-screen.js"></script>
 </body>
 </html>
