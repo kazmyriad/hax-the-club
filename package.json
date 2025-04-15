@@ -36,9 +36,11 @@
       "@haxtheweb/rpg-character": "^10.0.2",
       "@haxtheweb/type-writer": "^10.0.2",
       "@haxtheweb/simple-icon": "^10.0.2",
-      "@haxtheweb/inline-audio": "^10.0.2"
+      "@haxtheweb/inline-audio": "^10.0.2",
+      "@haxtheweb/hax-iconset": "^10.0.2"
     },
     "devDependencies": {
+      "rollup-plugin-copy": "^3.5.0",
       "@babel/preset-env": "^7.16.4",
       "@custom-elements-manifest/analyzer": "^0.10.3",
       "@open-wc/building-rollup": "^3.0.2",
