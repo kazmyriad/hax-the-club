@@ -127,6 +127,9 @@
     [is-screen] {
       transition: all 3s ease-in-out;
     }
+    inline-audio {
+      color: green;
+    }
 
   </style>
   <title>HAX: The Club - Penn State's HAX Club</title>
@@ -147,15 +150,18 @@
       </h1>
       <p>This is some awesome content about us. We are a club of people that do things</p>
     </example-htc-screen>
-    <example-htc-screen title="Something" sid="2">
+    <example-htc-screen title="Some..thing" sid="2">
       <h1>
-        <span class="text">Something Else us</span>
+        <span class="text">The Joker</span>
       </h1>
-      <p>This is some awesome content about us. We are a club of people that do things</p>
+      <p><inline-audio source="./assets/voices/joker-website-gone.mp3" shiny accent-color="green">How about a magic trick. I took your liiiitle website and.... it's... gone.. Ha hA Ha hA Ha</inline-audio></p>
     </example-htc-screen>
   </hax-the-club>
-  <script type="module" src="./hax-the-club.js"></script>
-  <script type="module" src="./lib/htc-main-screen.js"></script>
-  <script type="module" src="./lib/example-htc-screen.js"></script>
+  <script type="module">
+    import "./hax-the-club.js";
+    import "./lib/htc-main-screen.js";
+    import "./lib/example-htc-screen.js";
+    import "@haxtheweb/inline-audio/inline-audio.js";
+  </script>
 </body>
 </html>

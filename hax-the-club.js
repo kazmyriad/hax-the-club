@@ -190,7 +190,10 @@ export class HaxTheClub extends I18NMixin(LitElement) {
       setTimeout(() => {
         globalThis.document.body.classList.toggle('gone');
         this.screen = null;
-        this.screen = 0;
+        setTimeout(() => {
+          this.screen = 0;
+          globalThis.document.body.classList.toggle('joker');
+        }, 500);
       }, 3000);
     }, 6000);
   }
