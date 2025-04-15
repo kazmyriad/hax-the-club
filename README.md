@@ -1,4 +1,13 @@
 # hax-the-club
+
+## Club membership making screens
+- Fork this repo then clone locally and `npm install`
+- Take https://github.com/haxtheweb/hax-the-club/blob/main/lib/example-htc-screen.js and copy it into the `lib/` directory with a name that makes sense
+- rename the tag / class to match
+- import your tag into the `index.html` file at the bottom
+- add your tag name to the list, title it, give it an id, start writing content for it and modifying the background color for your square
+- Now you should be ready to work on YOUR element style and what not inside your web component!
+
 DDD + Lit web component based on OpenWC toolchain. This is intended to provide the following:
 - Look good via DDD, HAX design system
 - Simple, easy to read code via Lit
